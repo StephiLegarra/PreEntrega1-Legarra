@@ -1,0 +1,13 @@
+.containerNavbar {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.img {
+  border: 4px solid black;
+}
