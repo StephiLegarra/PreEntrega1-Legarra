@@ -1,14 +1,14 @@
 import "./App.css";
-import Home from "./components/Home/Home";
 import ItemList from "./components/ItemList/ItemList";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
+  let saludo = "Bienvenidos a MB INDUMENTARIA";
+
   return (
     <div className="App">
       <Navbar />
-      <Home />
-      <ItemList />
+      <ItemList saludo={saludo} />
     </div>
   );
 }
