@@ -1,10 +1,14 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Home from "./components/Home/Home";
+import ItemList from "./components/ItemList/ItemList";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <Navbar color="blue" />
+      <Navbar />
+      <Home />
+      <ItemList />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import CartWidget from "../CartWidget/CartWidget";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -11,13 +12,18 @@ const Navbar = () => {
       <ul
         style={{
           display: "flex",
-          gap: "30px",
+          gap: "40px",
+          listStyle: "none",
+          letterSpacing: "3px",
+          alignItems: "center",
+          fontWeight: "bold",
         }}
       >
         <li>Remeras</li>
         <li>Buzos</li>
         <li>Pantalones</li>
       </ul>
+      <CartWidget />
     </div>
   );
 };
