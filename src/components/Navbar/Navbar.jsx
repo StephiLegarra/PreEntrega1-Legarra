@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <div className={styles.containerNavbar}>
       <img
-        src="https://pps.whatsapp.net/v/t61.24694-24/322253871_751953889768698_7633417918375028965_n.jpg?ccb=11-4&oh=01_AdRohpydmDnHQvKPMbwOziXkNQQa7ZGgifAtSTFv9tJGWg&oe=6438E4A1"
-        alt="logo"
+        src="https://res.cloudinary.com/dpmexolyn/image/upload/v1681162456/322253871_751953889768698_7633417918375028965_n_irjuzo.jpg"
+        alt="Es es el logo de la empresa"
         className={styles.img}
       />
       <ul
