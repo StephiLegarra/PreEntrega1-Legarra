@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ItemList.module.css";
 
 const ItemList = ({ saludo }) => {
