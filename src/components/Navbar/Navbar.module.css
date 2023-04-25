@@ -3,13 +3,22 @@
   height: 10vh;
   display: flex;
   justify-content: space-between;
+  padding-top: 15px;
+  list-style: none;
   background-color: black;
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.img {
+img {
+  width: 80px;
   border: 4px solid black;
   border-radius: 50px;
+}
+
+.navegablesNavbar {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
 }
