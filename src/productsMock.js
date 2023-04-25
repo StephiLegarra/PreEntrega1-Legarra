@@ -22,7 +22,7 @@ export const productos = [
     title: "Buzo Drew",
     price: 7500,
     stock: 4,
-    description: "Buzo con capucha con insignia drew",
+    description: "Buzo con capucha y bolsillo canguro estilo oversize",
     category: "buzos",
     img: "https://res.cloudinary.com/dpmexolyn/image/upload/v1682357576/buzoDrew_zffwht.jpg",
   },
