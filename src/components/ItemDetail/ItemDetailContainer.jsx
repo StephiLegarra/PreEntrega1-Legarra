@@ -4,7 +4,6 @@ import { productos } from "../../productsMock";
 import useCounter from "../utils/hooks/useCounter";
 import { Button } from "@mui/material";
 import { useParams } from "react-router-dom";
-import { Block } from "@mui/icons-material";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
