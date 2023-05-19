@@ -1,8 +1,31 @@
+import { useContext, useEffect, useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import styles from "./Navbar.module.css";
 import { Outlet, Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
+import { db } from "../../firebaseConfig";
+import { getDocs, collection } from "firebase/firestore";
 
 const Navbar = () => {
+  const { cart } = useContext(CartContext);
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const categoriesCollection = collection(db, "categories");
+    getDocs(categoriesCollection)
+      .then((res) => {
+        let categoryResult = res.docs.map((category) => {
+          return {
+            ...category.data(),
+            id: category.id,
+          };
+        });
+        setCategories(categoryResult);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div>
       <div className={styles.containerNavbar}>
@@ -18,21 +41,20 @@ const Navbar = () => {
             }}
           />
         </Link>
-        <ul>
-          <Link className={styles.navegablesNavbar} to="/">
-            Todos
-          </Link>
-          <Link className={styles.navegablesNavbar} to="/category/remeras">
-            Remeras
-          </Link>
-          <Link className={styles.navegablesNavbar} to="/category/buzos">
-            Buzos
-          </Link>
-          <Link className={styles.navegablesNavbar} to="/category/pantalones">
-            Pantalones
-          </Link>
-        </ul>
-        <CartWidget />
+        <div style={{ display: "flex", gap: "30px" }}>
+          {categories.map((category) => {
+            return (
+              <Link
+                key={category.id}
+                to={category.path}
+                className={styles.navegablesNavbar}
+              >
+                {category.title}
+              </Link>
+            );
+          })}
+        </div>
+        {cart.length === 0 ? null : <CartWidget />}
       </div>
 
       <Outlet />

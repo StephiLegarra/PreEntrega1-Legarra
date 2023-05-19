@@ -1,22 +1,23 @@
-import React from "react";
+import { useContext } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import Badge from "@mui/material/Badge";
+import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
+import styles from "./CartWidget.module.css";
 
 const CartWidget = () => {
+  const { getTotalQuantity } = useContext(CartContext);
+
+  let total = getTotalQuantity();
+
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-        paddingRight: "1rem",
-      }}
-    >
-      <h3> Ver carrito </h3>
-      <Badge badgeContent={5} color="warning">
-        <ShoppingCartIcon />
-      </Badge>
-    </div>
+    <Link to="/cart">
+      <div className={styles.containerCart}>
+        <ShoppingCartIcon style={{ fontSize: "2rem" }} />
+        <div className={styles.bubbleCounter}>
+          <span>{total}</span>
+        </div>
+      </div>
+    </Link>
   );
 };
 

@@ -10,7 +10,6 @@ import {
 import { Link } from "react-router-dom";
 
 const ItemList = ({ items }) => {
-  console.log(items);
   return (
     <div className={styles.containerItemList}>
       {items.map((item) => {
@@ -71,11 +70,3 @@ const ItemList = ({ items }) => {
 };
 
 export default ItemList;
-
-/* style={{
-  display: "flex",
-  justifyContent: "space-evenly",
-  flexWrap: "wrap",
-  minHeight: "90vh",
-  padding: "40px",
-}} */

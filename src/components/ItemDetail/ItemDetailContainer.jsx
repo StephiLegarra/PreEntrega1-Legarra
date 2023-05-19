@@ -1,87 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { productos } from "../../productsMock";
-import useCounter from "../utils/hooks/useCounter";
-import { Button } from "@mui/material";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
+import Swal from "sweetalert2";
+import { db } from "../../firebaseConfig";
+import { getDoc, collection, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
 
-  const { counter, increment, decrement, reset } = useCounter();
+  const { agregarAlCarrito, getQuantityById } = useContext(CartContext);
 
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
-    let encontrado = productos.find((prod) => prod.id === +id);
-    setTimeout(() => {
-      setProduct(encontrado);
-    }, 500);
+    const itemCollection = collection(db, "productos");
+    const refDoc = doc(itemCollection, id);
+    getDoc(refDoc)
+      .then((res) =>
+        setProduct({
+          ...res.data(),
+          id: res.id,
+        })
+      )
+      .catch((err) => console.log(err));
   }, [id]);
+
+  // CONST ON ADD
+  const onAdd = (cantidad) => {
+    let data = {
+      ...product,
+      quantity: cantidad,
+    };
+    agregarAlCarrito(data);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: `Agregaste ${product.title} al carrito`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  let cantidadTotal = getQuantityById(product.id);
 
   return (
     <div>
-      <ItemDetail product={product} />
-      <h2 style={{ display: "block", margin: 20 }}>unidades: {counter}</h2>
-      <div
-        style={{
-          display: "block",
-          marginBottom: "10px",
-        }}
-      >
-        <Button
-          variant="contained"
-          size="small"
-          onClick={increment}
-          style={{
-            backgroundColor: "yellow",
-            color: "black",
-            marginRight: "10px",
-          }}
-        >
-          +
-        </Button>
-        <Button
-          variant="contained"
-          size="small"
-          onClick={decrement}
-          style={{ backgroundColor: "yellow", color: "black" }}
-        >
-          -
-        </Button>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Button
-          variant="outlined"
-          size="small"
-          style={{
-            color: "red",
-            margin: "10px",
-            border: "1px solid red",
-          }}
-          onClick={reset}
-        >
-          Reset
-        </Button>
-        <Button
-          variant="contained"
-          size="medium"
-          style={{
-            backgroundColor: "yellow",
-            color: "black",
-            margin: "10px",
-          }}
-        >
-          Agregar al carrito
-        </Button>
-      </div>
+      <ItemDetail
+        product={product}
+        onAdd={onAdd}
+        cantidadTotal={cantidadTotal}
+      />
     </div>
   );
 };
