@@ -11,6 +11,8 @@ import {
   updateDoc,
   doc,
 } from "firebase/firestore";
+import styles from "./FormCheckout.module.css";
+import { Link } from "react-router-dom";
 
 const FormCheckoutContainer = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
@@ -78,10 +80,29 @@ const FormCheckoutContainer = () => {
   return (
     <div>
       {orderId ? (
-        <h1>
-          Gracias por tu compra, el nro de orden es: {orderId}, por favor
-          conservelo
-        </h1>
+        <div style={{ margin: "50px" }}>
+          <div className={styles.containerOrder}>
+            <h1 className={styles.containerOrderText}>
+              ¡Muchas gracias por tu compra! <br />
+              <br />
+              El número de tu orden de compra es : {orderId} <br /> <br /> Por
+              favor conservalo por cualquier inconveniente!
+            </h1>
+            <Link
+              to="/"
+              style={{ display: "inline-block", paddingLeft: "10px" }}
+            >
+              <img
+                className={styles.orderImg}
+                src="https://res.cloudinary.com/dpmexolyn/image/upload/v1681162456/322253871_751953889768698_7633417918375028965_n_irjuzo.jpg"
+                alt="Es es el logo de la empresa"
+              />
+            </Link>
+          </div>
+          <Link to="/" className={styles.continue}>
+            SEGUIR COMPRANDO
+          </Link>
+        </div>
       ) : (
         <FormCheckout
           handleChange={handleChange}

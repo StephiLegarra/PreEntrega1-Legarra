@@ -6,7 +6,7 @@ const Cart = ({ cart, clearCartAlert, deleteProductById, total, navigate }) => {
   return (
     <div>
       {cart.length === 0 ? (
-        <div>
+        <div style={{ margin: "2rem" }}>
           <h3 className={styles.textCart}> Tu carrito esta vacío </h3>
           <Link to="/" className={styles.linkCart}>
             AGREGA PRODUCTOS A TU CARRITO
