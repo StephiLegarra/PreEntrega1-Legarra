@@ -1,24 +1,20 @@
-# Este es un ecommerce
+# Hi 👋, I'm Stephanie Legarra
 
-## Este es el proyecto final del curso de coderhouse
+## This is an ecommerce for men's clothing,
+
+## and it's my final project of coderhouse's React JS course.
+
+## 👨‍💻 All of my projects are available at [https://github.com/StephiLegarra](https://github.com/StephiLegarra)
+
+!["Logo de react"](/public/logo192.png)
+
+## To clone the repository
 
 ```
 git clone https://github.com/StephiLegarra/entregaFinalReact-Legarra.git
 ```
 
-```javascript
-let nombre = "pepe";
-const saludar = () => {
-  `hola ${nombre} como estas?`;
-};
-```
-
-[ir a google](https://google.com.ar/)
-
-!["este es el texto alternativo de la img"](/public/logo192.png)
-!["foto de pikachu"](https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/11/pikachu-pokemon-escarlata-purpura-2888180.jpg?tf=3840x)
-
-### Las librerias que se usaron --->
+## Libraries used -->
 
 - Material UI
 - formik
@@ -26,7 +22,7 @@ const saludar = () => {
 - sweetalert2
 - react spinners
 
-## Si queres usar este proyecto necesitas las siguientes variables de entorno, pero antes deberas crear el archivo .env y asignarle lo siguiente
+## To use this project you will need the environment variables, create the .env file and assign the following to it
 
 - REACT_APP_APIKEY=
 - REACT_APP_AUTHDOMAIN=
@@ -34,3 +30,22 @@ const saludar = () => {
 - REACT_APP_STORAGEBUCKET=
 - REACT_APP_MESSAGINGSENDERID=
 - REACT_APP_APPID=
+
+```javascript
+let nombre = "Stephanie";
+const saludar = () => {
+  `Hola soy ${nombre}, gracias por visitar mi perfil de github`;
+};
+```
+
+### Connect with me
+
+#### 📫 **stephanielegarra@gmail.com**
+
+<p align="left">
+<a href="https://linkedin.com/in/stephanie legarra" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="stephanie legarra" height="30" width="40" /></a>
+<a href="https://fb.com/stephanie legarra" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="stephanie legarra" height="30" width="40" /></a>
+<a href="https://instagram.com/stephilegarra" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="stephilegarra" height="30" width="40" /></a>
+</p>
+
+!["foto de pikachu"](https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/11/pikachu-pokemon-escarlata-purpura-2888180.jpg?tf=3840x)
