@@ -31,14 +31,7 @@ git clone https://github.com/StephiLegarra/entregaFinalReact-Legarra.git
 - REACT_APP_MESSAGINGSENDERID=
 - REACT_APP_APPID=
 
-```javascript
-let nombre = "Stephanie";
-const saludar = () => {
-  `Hola soy ${nombre}, gracias por visitar mi perfil de github`;
-};
-```
-
-### Connect with me
+### Connect with me:
 
 #### 📫 **stephanielegarra@gmail.com**
 
