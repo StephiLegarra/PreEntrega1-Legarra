@@ -3,7 +3,7 @@
 ## Este es el proyecto final del curso de coderhouse
 
 ```
-git clone https://github.com/StephiLegarra/react01.git
+git clone https://github.com/StephiLegarra/entregaFinalReact-Legarra.git
 ```
 
 ```javascript
@@ -20,9 +20,11 @@ const saludar = () => {
 
 ### Las librerias que se usaron --->
 
+- Material UI
 - formik
 - yup
 - sweetalert2
+- react spinners
 
 ## Si queres usar este proyecto necesitas las siguientes variables de entorno, pero antes deberas crear el archivo .env y asignarle lo siguiente
 
