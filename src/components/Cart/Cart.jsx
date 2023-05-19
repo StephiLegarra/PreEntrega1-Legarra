@@ -45,7 +45,7 @@ const Cart = ({ cart, clearCartAlert, deleteProductById, total, navigate }) => {
           <h2 className={styles.textCart}>
             El total de su compra es: ${total}
           </h2>
-          <div>
+          <div className={styles.buttonCart}>
             <Button
               variant="contained"
               size="small"
